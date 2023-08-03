@@ -1,32 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Content from './Content'
 
+//describe iTitle interface
 interface ITitle {
     text: string
 }
 
-interface IContent {
-    text: string
-    text2: string
-    year: number
-}
-
 const Title = (props: ITitle) => {
     return <h1>Hello {props.text}</h1>
-}
-
-const Content = (props: IContent) => {
-    return (
-        <React.Fragment>
-            <div>
-                <span>
-                    {props.text}
-                    {props.text2}
-                </span>
-                <p>{props.year}</p>
-            </div>
-        </React.Fragment>
-    )
 }
 
 function App() {
@@ -40,7 +22,6 @@ function App() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-
 root.render(
     <React.StrictMode>
         <App />
