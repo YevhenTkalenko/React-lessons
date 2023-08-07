@@ -1,22 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Content from './Content'
-
-//describe iTitle interface
-interface ITitle {
-    text: string
-}
-
-const Title = (props: ITitle) => {
-    return <h1>Hello {props.text}</h1>
-}
+import { Content } from './Content'
+import { Title } from './Title'
 
 function App() {
     return (
         <div>
             <Title text="React.js" />
             <Title text="TypeScript" />
-            <Content text="Guten Morgen" text2="Yugen" year={1994} />
+            <Content
+                text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse nihil repellat eos nisi nam atque aliquid aut soluta deserunt numquam molestias non doloremque "
+                text2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse nihil repellat eos nisi nam atque aliquid aut soluta deserunt numquam molestias non doloremque"
+                year={1994}
+            />
         </div>
     )
 }

@@ -3,19 +3,22 @@ interface Props {
     text2: string
     year: number
 }
-
-const Content = (props: Props) => {
+export const Content = (props: Props) => {
     return (
         <>
             <div>
-                <span>
+                <p
+                    style={{
+                        color: 'white',
+                        backgroundColor: 'green',
+                        padding: '15px',
+                    }}
+                >
                     {props.text}
-                    {props.text2}
-                </span>
+                </p>
+                <p>{props.text2}</p>
                 <p>{props.year}</p>
             </div>
         </>
     )
 }
-
-export default Content
