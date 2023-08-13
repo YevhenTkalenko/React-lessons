@@ -4,12 +4,21 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
-import { Container } from '@mui/material'
+import Container from '@mui/material/Container'
+import './Header.scss'
 
 interface Props {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static">
+        <AppBar
+            position="static"
+            className="header_container"
+            style={{
+                backgroundColor: 'purple',
+                color: 'white',
+                height: '600px',
+            }}
+        >
             <Container maxWidth="lg">
                 <Toolbar>
                     <IconButton
