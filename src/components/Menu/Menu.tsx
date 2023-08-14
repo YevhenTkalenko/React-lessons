@@ -1,14 +1,15 @@
 import Button from '@mui/material/Button'
+import './Menu.scss'
 
 interface Props {}
 const Menu = (props: Props) => {
     return (
         <>
-            <Button style={{ color: 'white' }}>Home</Button>
-            <Button style={{ color: 'white' }}>About</Button>
-            <Button style={{ color: 'white' }}>Payment</Button>
-            <Button style={{ color: 'white' }}>Shipping</Button>
-            <Button style={{ color: 'white' }}>Cart</Button>
+            <Button className="menu_btn">Home</Button>
+            <Button className="menu_btn">About</Button>
+            <Button className="menu_btn">Payment</Button>
+            <Button className="menu_btn">Shipping</Button>
+            <Button className="menu_btn">Cart</Button>
         </>
     )
 }
