@@ -21,7 +21,7 @@ const ProductsListItem = ({
                 <div className="product-title">{title}</div>
                 <div className="product-descr">This is {description}</div>
                 <div className="product-features">Type: {type}</div>
-                <div className="product-features">Capacity: {capacity}</div>
+                <div className="product-features">Capacity: {capacity} GB</div>
                 <div className="product-price">{price}$</div>
             </CardContent>
             <CardActions className="product-btn-wrap">
