@@ -5,6 +5,7 @@ import productProps from 'utils/productsArray'
 
 interface Props { }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 interface productProps {
     title: string
     description: string
