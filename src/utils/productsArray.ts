@@ -4,7 +4,8 @@ interface Product {
     description: string
     type: string
     capacity: string
-    price: number
+    price: number,
+    image: string
 }
 
 const productsArray: Product[] = [
@@ -14,7 +15,8 @@ const productsArray: Product[] = [
         description: 'iPhone 14 pro',
         type: 'phone',
         capacity: '200',
-        price: 1000
+        price: 1000,
+        image: '/images/Iphone_14_pro.webp'
     },
     {
         id: 2,
@@ -22,7 +24,8 @@ const productsArray: Product[] = [
         description: 'iPhone 13 pro',
         type: 'phone',
         capacity: '220',
-        price: 900
+        price: 900,
+        image: '/images/Iphone_13_pro.webp'
     },
     {
         id: 3,
@@ -30,7 +33,8 @@ const productsArray: Product[] = [
         description: 'iPhone 12 pro',
         type: 'phone',
         capacity: '200',
-        price: 800
+        price: 800,
+        image: '/images/Iphone_12_pro.webp'
     },
     {
         id: 4,
@@ -38,7 +42,8 @@ const productsArray: Product[] = [
         description: 'iPhone 11 pro',
         type: 'phone',
         capacity: '180',
-        price: 700
+        price: 700,
+        image: '/images/Iphone_11_pro.webp'
     },
     {
         id: 5,
@@ -46,7 +51,8 @@ const productsArray: Product[] = [
         description: 'iPhone 10 pro',
         type: 'phone',
         capacity: '150',
-        price: 600
+        price: 600,
+        image: '/images/Iphone_10_pro.webp'
     },
     {
         id: 6,
@@ -54,7 +60,8 @@ const productsArray: Product[] = [
         description: 'iPhone 9 pro',
         type: 'phone',
         capacity: '100',
-        price: 500
+        price: 500,
+        image: '/images/Iphone_9_pro.webp'
     }
 
 ]
