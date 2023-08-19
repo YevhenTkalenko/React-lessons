@@ -33,6 +33,16 @@
 
     img {
         width: 150px;
-        height: auto;
+        height: 200px;
+    }
+}
+
+.product-quantity {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+
+    input {
+        text-align: center;
     }
 }

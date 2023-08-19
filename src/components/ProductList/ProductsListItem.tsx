@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent } from '@mui/material'
+import { Button, Card, CardActions, CardContent, TextField } from '@mui/material'
 import './ProductsListItem.scss'
 
 
@@ -24,6 +24,11 @@ const ProductsListItem = ({ title, description, type, capacity, price, image }: 
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity} GB</div>
                 <div className="product-price">{price}$</div>
+                <div className="product-quantity">
+                    <Button variant='outlined' style={{ minWidth: '20px', marginRight: "5px" }}>-</Button>
+                    <TextField size='small' value={1}></TextField>
+                    <Button variant='outlined' style={{ minWidth: '20px', marginLeft: "5px" }}>+</Button>
+                </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
                 <Button variant="outlined">Add to cart</Button>
