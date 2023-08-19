@@ -1,4 +1,4 @@
-interface productProps {
+interface Product {
     title: string
     description: string
     type: string
@@ -6,7 +6,7 @@ interface productProps {
     price: number
 }
 
-const productsArray: productProps[] = [
+const productsArray: Product[] = [
     {
         title: 'Iphone 14 pro',
         description: 'iPhone 14 pro',
@@ -48,7 +48,8 @@ const productsArray: productProps[] = [
         type: 'phone',
         capacity: '100',
         price: 500
-    },
+    }
+
 ]
 
 export default productsArray 

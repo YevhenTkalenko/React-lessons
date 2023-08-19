@@ -1,18 +1,10 @@
 import { Grid, Typography } from '@mui/material'
 import ProductsListItem from './ProductsListItem'
 import productsArray from 'utils/productsArray'
-import productProps from 'utils/productsArray'
+import './ProductsListItem.scss'
 
 interface Props { }
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-interface productProps {
-    title: string
-    description: string
-    type: string
-    capacity: string
-    price: number
-}
 
 
 const ProductList = (props: Props) => {
@@ -25,9 +17,9 @@ const ProductList = (props: Props) => {
 
             <Grid container spacing={3}>
                 {
-                    productsArray.map(({ title, description, type, capacity, price }: productProps) => {
+                    productsArray.map(({ title, description, type, capacity, price }, i) => {
                         return (
-                            <Grid item xs={12} sm={6} md={4}>
+                            <Grid item xs={12} sm={6} md={4} key={i}>
                                 <ProductsListItem
                                     title={title}
                                     description={description}
@@ -37,10 +29,8 @@ const ProductList = (props: Props) => {
                             </Grid>
                         )
                     })
-
                 }
             </Grid>
-
         </>
     )
 }
