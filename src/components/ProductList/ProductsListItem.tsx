@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, TextField } from '@mui/material'
 import './ProductsListItem.scss'
+import { useState } from 'react'
 
 
 interface Props {
@@ -12,7 +13,18 @@ interface Props {
 }
 
 
+
 const ProductsListItem = ({ title, description, type, capacity, price, image }: Props) => {
+    const [count, setCount] = useState<number>(1)
+
+    const onIncrement = () => {
+        setCount(count + 1)
+    }
+
+    const onDecrement = () => {
+        setCount(count - 1)
+    }
+
     return (
         <Card variant="outlined" className="product">
             <CardContent>
@@ -25,9 +37,9 @@ const ProductsListItem = ({ title, description, type, capacity, price, image }: 
                 <div className="product-features">Capacity: {capacity} GB</div>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button variant='outlined' style={{ minWidth: '20px', marginRight: "5px" }}>-</Button>
-                    <TextField size='small' value={1}></TextField>
-                    <Button variant='outlined' style={{ minWidth: '20px', marginLeft: "5px" }}>+</Button>
+                    <Button variant='outlined' style={{ minWidth: '20px', marginRight: "5px" }} onClick={() => onDecrement()}>-</Button>
+                    <TextField size='small' value={count}></TextField>
+                    <Button variant='outlined' style={{ minWidth: '20px', marginLeft: "5px" }} onClick={() => onIncrement()}>+</Button>
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
