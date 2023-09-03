@@ -17,6 +17,7 @@ interface Props {
 const ProductsListItem = ({ title, description, type, capacity, price, image }: Props) => {
     const [count, setCount] = useState<number>(1)
 
+
     const onIncrement = () => {
         setCount(count + 1)
     }
@@ -37,9 +38,9 @@ const ProductsListItem = ({ title, description, type, capacity, price, image }: 
                 <div className="product-features">Capacity: {capacity} GB</div>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button variant='outlined' style={{ minWidth: '20px', marginRight: "5px" }} onClick={() => onDecrement()}>-</Button>
+                    <Button variant='outlined' style={{ minWidth: '20px', marginRight: "5px" }} onClick={() => onDecrement()} disabled={count <= 1}>-</Button>
                     <TextField size='small' value={count}></TextField>
-                    <Button variant='outlined' style={{ minWidth: '20px', marginLeft: "5px" }} onClick={() => onIncrement()}>+</Button>
+                    <Button variant='outlined' style={{ minWidth: '20px', marginLeft: "5px" }} onClick={() => onIncrement()} disabled={count >= 10}>+</Button>
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
