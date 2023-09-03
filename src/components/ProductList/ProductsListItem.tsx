@@ -19,11 +19,11 @@ const ProductsListItem = ({ title, description, type, capacity, price, image }: 
 
 
     const onIncrement = () => {
-        setCount(count + 1)
+        setCount((prevState) => prevState + 1)
     }
 
     const onDecrement = () => {
-        setCount(count - 1)
+        setCount((prevState) => prevState - 1)
     }
 
     return (
