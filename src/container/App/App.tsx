@@ -12,18 +12,29 @@ interface CartDataProps {
     totalPrice: number
 }
 
+
+
 const App = (props: Props) => {
 
     const [cartData, setCartData] = useState<CartDataProps>({
-        totalCount: 10,
-        totalPrice: 100
+        totalCount: 0,
+        totalPrice: 0
     })
+
+    const addProductToCart = (count: number, price: number) => {
+        setCartData((prevState) => ({
+            totalCount: prevState.totalCount + count,
+            totalPrice: prevState.totalPrice + count * price
+        }))
+    }
+
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            <Main />
+            {/* <button onClick={() => addProductToCart(5, 500)}>Add to cart (5 coun, price $500)</button> */}
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
     )

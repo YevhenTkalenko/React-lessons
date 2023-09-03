@@ -10,11 +10,14 @@ interface Props {
     capacity: string
     price: number
     image: string
+
+    addProductToCart: (count: number, price: number) => void
+
 }
 
 
 
-const ProductsListItem = ({ title, description, type, capacity, price, image }: Props) => {
+const ProductsListItem = ({ title, description, type, capacity, price, image, addProductToCart }: Props) => {
     const [count, setCount] = useState<number>(1)
 
 
@@ -44,7 +47,7 @@ const ProductsListItem = ({ title, description, type, capacity, price, image }: 
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
-                <Button variant="outlined">Add to cart</Button>
+                <Button variant="outlined" onClick={() => addProductToCart(count, price)}>Add to cart</Button>
             </CardActions>
         </Card>
     )

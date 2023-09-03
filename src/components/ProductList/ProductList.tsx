@@ -3,11 +3,13 @@ import ProductsListItem from './ProductsListItem'
 import productsArray from 'utils/productsArray'
 import './ProductsListItem.scss'
 
-interface Props { }
+interface Props {
+    addProductToCart: (count: number, price: number) => void
+}
 
 
 
-const ProductList = (props: Props) => {
+const ProductList = ({ addProductToCart }: Props) => {
     return (
         <>
             <Typography variant="h4" align="center" component="h1">
@@ -21,6 +23,7 @@ const ProductList = (props: Props) => {
                         return (
                             <Grid item xs={12} sm={6} md={4} key={id}>
                                 <ProductsListItem
+                                    addProductToCart={addProductToCart}
                                     title={title}
                                     description={description}
                                     type={type}
