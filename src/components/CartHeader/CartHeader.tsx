@@ -1,17 +1,23 @@
 interface Props {
-    cartData: {
-        totalCount: number,
-        totalPrice: number
+    productsInCart: {
+        [id: number]: number
     }
 }
 
 
-const CartHeader = ({ cartData }: Props) => {
+const CartHeader = ({ productsInCart }: Props) => {
     return (
         <div>
-            <div>{cartData.totalCount}</div>
-            <div>$ {cartData.totalPrice}</div>
+            {
+                Object.keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productId}: {productsInCart[Number(productId)]}
+                    </div>
+                ))
+            }
         </div>
     )
+
+
 }
 export default CartHeader

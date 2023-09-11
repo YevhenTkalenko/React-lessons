@@ -15,8 +15,6 @@ interface Props {
 
 }
 
-
-
 const ProductsListItem = ({ title, description, type, capacity, price, image, addProductToCart }: Props) => {
     const [count, setCount] = useState<number>(1)
 

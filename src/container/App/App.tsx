@@ -7,33 +7,25 @@ import { useState } from 'react'
 
 interface Props { }
 
-interface CartDataProps {
-    totalCount: number,
-    totalPrice: number
+interface ProductsInCart {
+    [id: number]: number
 }
-
 
 
 const App = (props: Props) => {
 
-    const [cartData, setCartData] = useState<CartDataProps>({
-        totalCount: 0,
-        totalPrice: 0
-    })
+    const addProductToCart = (count: number, price: number) => { }
 
-    const addProductToCart = (count: number, price: number) => {
-        setCartData((prevState) => ({
-            totalCount: prevState.totalCount + count,
-            totalPrice: prevState.totalPrice + count * price
-        }))
-    }
+    const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
+        1: 5,
+        2: 4
+    })
 
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header cartData={cartData} />
-            {/* <button onClick={() => addProductToCart(5, 500)}>Add to cart (5 coun, price $500)</button> */}
+            <Header productsInCart={productsInCart} />
             <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
