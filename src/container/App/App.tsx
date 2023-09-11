@@ -14,7 +14,12 @@ interface ProductsInCart {
 
 const App = (props: Props) => {
 
-    const addProductToCart = (count: number, price: number) => { }
+    const addProductToCart = (id: number, count: number) => {
+        setProductsInCart((prevState) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + count
+        }))
+    }
 
     const [productsInCart, setProductsInCart] = useState<ProductsInCart>({
         1: 5,

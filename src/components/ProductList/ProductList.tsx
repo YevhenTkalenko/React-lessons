@@ -23,6 +23,7 @@ const ProductList = ({ addProductToCart }: Props) => {
                         return (
                             <Grid item xs={12} sm={6} md={4} key={id}>
                                 <ProductsListItem
+                                    id={id}
                                     addProductToCart={addProductToCart}
                                     title={title}
                                     description={description}

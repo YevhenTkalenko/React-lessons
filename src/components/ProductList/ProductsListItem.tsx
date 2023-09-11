@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 
 interface Props {
+    id: number
     title: string
     description: string
     type: string
@@ -15,7 +16,7 @@ interface Props {
 
 }
 
-const ProductsListItem = ({ title, description, type, capacity, price, image, addProductToCart }: Props) => {
+const ProductsListItem = ({ id, title, description, type, capacity, price, image, addProductToCart }: Props) => {
     const [count, setCount] = useState<number>(1)
 
 
@@ -45,7 +46,7 @@ const ProductsListItem = ({ title, description, type, capacity, price, image, ad
                 </div>
             </CardContent>
             <CardActions className="product-btn-wrap">
-                <Button variant="outlined" onClick={() => addProductToCart(count, price)}>Add to cart</Button>
+                <Button variant="outlined" onClick={() => addProductToCart(id, count)}>Add to cart</Button>
             </CardActions>
         </Card>
     )
